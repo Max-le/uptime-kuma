@@ -40,8 +40,10 @@
                         <HeartbeatBar size="small" :monitor-id="item.id" />
                     </div>
                 </div>
+                
             </router-link>
         </div>
+
     </div>
 </template>
 
@@ -50,13 +52,15 @@ import HeartbeatBar from "../components/HeartbeatBar.vue";
 import Tag from "../components/Tag.vue";
 import Uptime from "../components/Uptime.vue";
 import { getMonitorRelativeURL } from "../util.ts";
+import WebsiteScreenshot from "./WebsiteScreenshot.vue";
 
 export default {
     components: {
-        Uptime,
-        HeartbeatBar,
-        Tag,
-    },
+    Uptime,
+    HeartbeatBar,
+    Tag,
+    WebsiteScreenshot
+},
     props: {
         /** Should the scrollbar be shown */
         scrollbar: {

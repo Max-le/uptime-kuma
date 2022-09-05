@@ -49,15 +49,6 @@
             <div class="shadow-box big-padding text-center stats">
                 <div class="row">
                     <div class="col">
-                        <h4>{{ pingTitle() }}</h4>
-                        <p>({{ $t("Current") }})</p>
-                        <span class="num">
-                            <a href="#" @click.prevent="showPingChartBox = !showPingChartBox">
-                                <CountUp :value="ping" />
-                            </a>
-                        </span>
-                    </div>
-                    <div class="col">
                         <h4>{{ pingTitle(true) }}</h4>
                         <p>(24{{ $t("-hour") }})</p>
                         <span class="num"><CountUp :value="avgPing" /></span>
@@ -73,12 +64,8 @@
                         <span class="num"><Uptime :monitor="monitor" type="720" /></span>
                     </div>
 
-                    <div v-if="tlsInfo" class="col">
-                        <h4>{{ $t("Cert Exp.") }}</h4>
-                        <p>(<Datetime :value="tlsInfo.certInfo.validTo" date-only />)</p>
-                        <span class="num">
-                            <a href="#" @click.prevent="toggleCertInfoBox = !toggleCertInfoBox">{{ tlsInfo.certInfo.daysRemaining }} {{ $tc("day", tlsInfo.certInfo.daysRemaining) }}</a>
-                        </span>
+                    <div class="col">
+                        <WebsiteScreenshot></WebsiteScreenshot>
                     </div>
                 </div>
             </div>
@@ -94,6 +81,7 @@
                 </div>
             </transition>
 
+x
             <!-- Ping Chart -->
             <div v-if="showPingChartBox" class="shadow-box big-padding text-center ping-chart-wrapper">
                 <div class="row">
@@ -187,20 +175,22 @@ import Pagination from "v-pagination-3";
 const PingChart = defineAsyncComponent(() => import("../components/PingChart.vue"));
 import Tag from "../components/Tag.vue";
 import CertificateInfo from "../components/CertificateInfo.vue";
+import WebsiteScreenshot from "../components/WebsiteScreenshot.vue";
 
 export default {
     components: {
-        Uptime,
-        CountUp,
-        Datetime,
-        HeartbeatBar,
-        Confirm,
-        Status,
-        Pagination,
-        PingChart,
-        Tag,
-        CertificateInfo,
-    },
+    Uptime,
+    CountUp,
+    Datetime,
+    HeartbeatBar,
+    Confirm,
+    Status,
+    Pagination,
+    PingChart,
+    Tag,
+    CertificateInfo,
+    WebsiteScreenshot
+},
     data() {
         return {
             page: 1,
