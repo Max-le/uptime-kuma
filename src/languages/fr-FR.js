@@ -317,4 +317,5 @@ export default {
     alertaApiKey: "Clé de l'API",
     alertaAlertState: "État de l'Alerte",
     alertaRecoverState: "État de récupération",
+    signedInDisp: "Connecté en tant que {0}"
 };
