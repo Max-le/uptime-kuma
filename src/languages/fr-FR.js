@@ -1,6 +1,6 @@
 export default {
     languageName: "Français",
-    checkEverySecond: "Vérifier toutes les {0} secondes",
+    checkEverySecond: "Vérification toutes les {0} secondes",
     retryCheckEverySecond: "Réessayer toutes les {0} secondes.",
     retriesDescription: "Nombre d'essais avant que le service soit déclaré hors-ligne.",
     ignoreTLSError: "Ignorer les erreurs liées au certificat SSL/TLS",
