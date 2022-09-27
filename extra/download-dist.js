@@ -5,11 +5,11 @@ const tar = require("tar");
 const packageJSON = require("../package.json");
 const fs = require("fs");
 const rmSync = require("./fs-rmSync.js");
-const version = packageJSON.version;
+const version = 0.1;
 
 const filename = "dist.tar.gz";
 
-const url = `https://github.com/louislam/uptime-kuma/releases/download/${version}/${filename}`;
+const url = `https://github.com/max-le/uptime-kuma/releases/download/${version}/${filename}`;
 download(url);
 
 /**
