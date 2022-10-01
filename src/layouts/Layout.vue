@@ -16,9 +16,7 @@
                 <span class="fs-4 title">{{ $t("Diamond Monitoring") }}</span>
             </router-link>
 
-            <a v-if="false" target="_blank" href="https://github.com/louislam/uptime-kuma/releases" class="btn btn-info me-3">
-                <font-awesome-icon icon="arrow-alt-circle-up" /> {{ $t("New Update") }}
-            </a>
+    
 
             <ul class="nav nav-pills">
                 <li v-if="$root.loggedIn" class="nav-item me-2">
